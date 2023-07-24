@@ -15,6 +15,12 @@ const Login = () => {
         body: JSON.stringify({ username, password }),
       });
       const data = await response.json();
+
+      if (response.ok) {
+        console.log('Login successful!');
+      } else {
+        console.error('Login failed. Please check your credentials.');
+      }
     } catch (error) {
       console.error('Error during login:', error);
     }
