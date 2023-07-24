@@ -11,7 +11,7 @@ function LandingPage() {
             <img src={logoImage} alt="Botanical Buddy" className="logo-image" />
             <span className="logo-text">Botanical Buddy</span>
         </div>
-        <button className='login-button'>Get Started</button>
+        <button className='login-button'>Login</button>
       </nav>
       <div className='home-content'>
         <div className="page-text">
