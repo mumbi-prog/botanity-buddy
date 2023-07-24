@@ -1,4 +1,3 @@
-// components/Login.js
 import React, { useState } from 'react';
 
 function Login() {
@@ -15,9 +14,11 @@ function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
+        // handle successful login by user
         if (data.success) {
           console.log('Login successful!');
         } else {
+            // handle unsuccwssful login by user
           console.error('Login failed. Please check your credentials.');
         }
       })
