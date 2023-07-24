@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function Dashboard() {
     const [plants, setPlants] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetchPlants();
@@ -9,9 +10,20 @@ function Dashboard() {
 
     function fetchPlants() {
         fetch('http://localhost:9292/plants')
-        .then((response) => response.json())
-        .then((data) => setPlants(data))
-        .catch((error) => console.error('Error fetching plants:', error));
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Failed to fetch plant data');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            setPlants(data);
+            setError(null); 
+          })
+          .catch((error) => {
+            console.error('Error fetching plants:', error);
+            setError('Error fetching plant data. Please try again later.');
+          });
     }
 
     function renderPlants() {
@@ -27,7 +39,7 @@ function Dashboard() {
     return (
         <div>
         <h2>Plant Collection</h2>
-        {renderPlants()}
+        {error ? <p>{error}</p> : renderPlants()}
         </div>
     );
 }
