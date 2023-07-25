@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
 import { BrowserRouter as Router} from 'react-router-dom';
+import "./Dashboard.css"
 
 function Dashboard() {
   const [plants, setPlants] = useState([]);
@@ -25,7 +26,7 @@ function Dashboard() {
 
   return (
     <Router>
-      <div>
+      <div className='plant-dashboard'>
         <h2>Plant Collection</h2>
         <div className="plant-card-container">
           {plants.map((plant) => (
