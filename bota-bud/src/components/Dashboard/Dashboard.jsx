@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PlantCard from './PlantCard';
-import PlantDetails from './PlantDetails';
+import PlantCard from '../PlantCard/PlantCard';
+import PlantDetails from '../PlantDetails/PlantDetails';
 
 function Dashboard() {
   const [plants, setPlants] = useState([]);
