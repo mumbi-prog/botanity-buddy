@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 function Dashboard() {
   const [plants, setPlants] = useState([]);
@@ -23,15 +24,17 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      <h2>Plant Collection</h2>
-      <div className="plant-card-container">
-        {plants.map((plant) => (
-          <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
-        ))}
+    <Router>
+      <div>
+        <h2>Plant Collection</h2>
+        <div className="plant-card-container">
+          {plants.map((plant) => (
+            <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
+          ))}
+        </div>
+        {selectedPlant && <PlantDetails plant={selectedPlant} />}
       </div>
-      {selectedPlant && <PlantDetails plant={selectedPlant} />}
-    </div>
+    </Router>
   );
 }
 

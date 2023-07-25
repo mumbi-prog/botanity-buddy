@@ -40,9 +40,10 @@ function PlantDetails({ plant }) {
                     textDecoration: task.completed ? 'line-through' : 'none',
                     }}
                 >
-                    {task.name} - Due Date: {task.due_date}
+                    {task.name}
                 </span>
-                <p>{task.description}</p>
+                    <p>{task.description}, </p>
+                    <p>By {task.due_date}</p>
                 </li>
             ))}
             </ul>
