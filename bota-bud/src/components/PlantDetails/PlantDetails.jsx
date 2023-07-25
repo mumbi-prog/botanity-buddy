@@ -46,7 +46,7 @@ function PlantDetails({ plant }) {
                 </li>
             ))}
             </ul>
-            <button onClick={handleBackToDashboard}>Back to Dashboard</button>
+            <button onClick={handleBackToDashboard} className='b-dash'>Back to Dashboard</button>
         </div>
         </div>
   );

@@ -1,0 +1,57 @@
+.plant-details {
+    display: flex;
+    margin-top: 20px;
+}
+  
+.plant-details .plant-image {
+    flex: 1;
+}
+  
+.plant-details .plant-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.plant-details .plant-info {
+    flex: 1;
+    padding: 0 20px;
+}
+  
+.plant-details .plant-info h2 {
+    font-size: 24px;
+    margin: 0;
+}
+  
+.plant-details .plant-info p {
+    color: #555;
+    margin: 5px 0;
+}
+  
+.plant-details .plant-info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+  
+.plant-details .plant-info ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.plant-details .plant-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+  
+.plant-details .plant-info input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+.b-dash{
+    background-color: #012201;
+    color: #ffffff;
+    border-radius: 20px;
+    width: fit-content;
+}
+  
