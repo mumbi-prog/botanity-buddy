@@ -10,11 +10,15 @@ function App() {
       setIsLoggedIn(true);
     };
 
+    const handleLogout = () => {
+      setIsLoggedIn(false);
+    };
+
     return (
       <div className="App">
         <LandingPage />
         
-        {isLoggedIn ? <Dashboard /> : <Login onLoginSuccess={handleLoginSuccess} />}
+        {isLoggedIn ? <Dashboard handleLogout={handleLogout} /> : <Login onLoginSuccess={handleLoginSuccess} />}
       </div>
     );
 }
