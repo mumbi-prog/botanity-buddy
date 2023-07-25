@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import LandingPage from './components/LandingPage';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+import LandingPage from './components/LandingPage/LandingPage';
+import Login from './components/Login/Login';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
