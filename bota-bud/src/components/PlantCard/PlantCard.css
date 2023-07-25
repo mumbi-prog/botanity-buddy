@@ -1,0 +1,28 @@
+:root {
+    --light-colors: #b7dcfc, #f3e86c, #e0ffff, #ffdab9, #f0fff0, #f8abab;
+}
+
+.plant-card {
+    border: 2px solid #062303;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color: var(--light-colors);
+}
+  
+.plant-card:hover {
+    transform: scale(1.05);
+}
+  
+.plant-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
