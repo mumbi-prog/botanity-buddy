@@ -26,3 +26,29 @@
     height: auto;
     border-radius: 8px;
 }
+
+.plant-info {
+    margin-top: 10px;
+}
+  
+.plant-info h3 {
+    font-size: 20px;
+    margin: 0;
+}
+  
+.plant-info p {
+    color: #555;
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.plant-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    width: 85%;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
