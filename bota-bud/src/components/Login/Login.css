@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gabriela', serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d3d3d3;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    text-align: center;
+    border: 1px solid #8f2121;
+    border-radius: 5%;
+    padding: 15px 30px;
+    background: rgba(43, 90, 10, 0.8); 
+    width: 300px;
+    align-items: center;
+    margin: 10% auto; 
+    backdrop-filter: blur(5px);
+  }
+
+.login-container h3{
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    font-family: 'Gabriela', serif;
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: beige;
+}
+
+.credentials input {
+    width: 100%;
+    height: 35px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(219, 219, 15, 0.1);
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.credentials input::placeholder {
+    color: white;
+    padding-left: 10px;
+}
+
+.credentials {
+    position: relative; 
+}
+  
+.credentials i {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; 
+}
+  
+
+.login-container button{
+    width: 100%;
+    height: 35px;
+}

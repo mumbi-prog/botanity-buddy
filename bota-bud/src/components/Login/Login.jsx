@@ -32,24 +32,26 @@ function Login({ onLoginSuccess }) {
 //   login form layout
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className='login-container'>
+      <h3>Login</h3>
       <div className='credentials'>
             <input
             type="text"
-            placeholder='Enter username'
+            placeholder='Username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             />
+            <i class='bx bxs-user'></i>
       </div>
       <br />
       <div className='credentials'>
             <input
             type="password"
-            placeholder='Enter password'
+            placeholder='Password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
+            <i class='bx bxs-lock'></i>
       </div>
       <br />
       <button onClick={handleLogin}>Login</button>
