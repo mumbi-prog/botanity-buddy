@@ -37,15 +37,27 @@
     list-style: none;
     padding: 0;
 }
-  
+
 .plant-details .plant-info li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+  
+.plant-details .plant-info .task-item input[type='checkbox'] {
+    margin-right: 15px;
+}
+
+  
+.plant-details .plant-info .task-item {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
-  
-.plant-details .plant-info input[type='checkbox'] {
-    margin-right: 10px;
+ 
+.plant-details .plant-info .task-description p {
+    margin: 0;
 }
 
 .b-dash{
@@ -54,4 +66,9 @@
     border-radius: 20px;
     width: fit-content;
 }
+
+
+
+
+  
   

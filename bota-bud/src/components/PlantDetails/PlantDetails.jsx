@@ -29,22 +29,26 @@ function PlantDetails({ plant }) {
             <h3>Care Tasks</h3>
             <ul>
             {careTasks.map((task) => (
-                <li key={task.id}>
-                <input
+                <li key={task.id} className={`task-item-${task.id}`}>
+                <div className="task-item">
+                  <input
                     type="checkbox"
                     checked={task.completed}
                     onChange={() => handleCheckboxClick(task.id)}
-                />
-                <span
+                  />
+                  <span
                     style={{
-                    textDecoration: task.completed ? 'line-through' : 'none',
+                      textDecoration: task.completed ? 'line-through' : 'none',
                     }}
-                >
+                  >
                     {task.name}
-                </span>
-                    <p>{task.description}, </p>
-                    <p>By {task.due_date}</p>
-                </li>
+                  </span>
+                </div>
+                <div className="task-description">
+                  <p>{task.description}</p>
+                  <p>By {task.due_date}</p>
+                </div>
+              </li>
             ))}
             </ul>
             <button onClick={handleBackToDashboard} className='b-dash'>Back to Dashboard</button>
