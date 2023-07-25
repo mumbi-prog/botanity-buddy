@@ -42,7 +42,6 @@ body{
     background-color: transparent;
     color: white;
     border: 2px solid rgba(219, 219, 15, 0.1);
-    cursor: pointer;
     border-radius: 5px;
 
 }
@@ -68,4 +67,5 @@ body{
 .login-container button{
     width: 100%;
     height: 35px;
+    cursor: pointer;
 }
