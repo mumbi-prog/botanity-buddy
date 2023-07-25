@@ -4,7 +4,7 @@ import PlantDetails from '../PlantDetails/PlantDetails';
 import { BrowserRouter as Router} from 'react-router-dom';
 import "./Dashboard.css"
 
-function Dashboard() {
+function Dashboard({ handleLogout }) {
   const [plants, setPlants] = useState([]);
   const [selectedPlant, setSelectedPlant] = useState(null);
 
@@ -24,16 +24,25 @@ function Dashboard() {
     setSelectedPlant(selectedPlant);
   };
 
+  const handleBackToDashboard = () => {
+    setSelectedPlant(null);
+  };
+
   return (
     <Router>
       <div className='plant-dashboard'>
         <h2>Plant Collection</h2>
+        <div className="logout-button-container">
+          <button className="logout-button" onClick={handleLogout}>Logout</button>
+        </div>
         <div className="plant-card-container">
           {plants.map((plant) => (
             <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
           ))}
         </div>
-        {selectedPlant && <PlantDetails plant={selectedPlant} />}
+        {selectedPlant ? (
+          <PlantDetails plant={selectedPlant} onBackToDashboard={handleBackToDashboard} />
+        ) : null}
       </div>
     </Router>
   );
