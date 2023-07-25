@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
 import { BrowserRouter as Router} from 'react-router-dom';
+import logoImage from '../../images/logo02.png'
 import "./Dashboard.css"
 
 function Dashboard({ handleLogout }) {
@@ -30,20 +31,28 @@ function Dashboard({ handleLogout }) {
 
   return (
     <Router>
-      <div className='plant-dashboard'>
-        <h2>Plant Collection</h2>
-        <div className="logout-button-container">
-          <button className="logout-button" onClick={handleLogout}>Logout</button>
+        <div className="navbar">
+        <div className="navbar-left">
+          <img src={logoImage} alt="Botanical Buddy" className="logo-image" />
         </div>
-        <div className="plant-card-container">
-          {plants.map((plant) => (
-            <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
-          ))}
+        <div className="navbar-right">
+          <button className="logout-button" onClick={handleLogout}>
+             <i class='bx bxs-user-circle'></i>
+            Logout
+          </button>
         </div>
-        {selectedPlant ? (
-          <PlantDetails plant={selectedPlant} onBackToDashboard={handleBackToDashboard} />
-        ) : null}
-      </div>
+        </div>
+        <div className='plant-dashboard'>
+            <h2>Plant Collection</h2>
+            <div className="plant-card-container">
+            {plants.map((plant) => (
+                <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
+            ))}
+            </div>
+            {selectedPlant ? (
+            <PlantDetails plant={selectedPlant} onBackToDashboard={handleBackToDashboard} />
+            ) : null}
+        </div>
     </Router>
   );
 }
