@@ -1,17 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Gabriela', serif;
-}
-
-body{
+*body{
     display: flex;
     justify-content: center;
     align-items: center;
     background: #d3d3d3;
     height: 100vh;
-    margin: 0;
 }
 
 .login-container {
@@ -24,6 +16,7 @@ body{
     align-items: center;
     margin: 10% auto; 
     backdrop-filter: blur(5px);
+    font-family: 'Gabriela', serif;
   }
 
 .login-container h3{
