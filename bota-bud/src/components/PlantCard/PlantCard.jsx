@@ -1,13 +1,13 @@
 import React from 'react';
 import './PlantCard.css';
 
-function PlantCard({ plant, onClick }) {
+function PlantCard({ plant, onClick, isSelected }) {
   return (
-    <div className="plant-card" onClick={() => onClick(plant.id)}>
+    <div className={`plant-card ${isSelected ? 'selected' : ''}`}>
       <img src={plant.image_url} alt={plant.name} />
       <div className="plant-info">
         <div className='e-and-d'>
-            <i class='bx bx-expand' title='expand'></i>
+            <i className="bx bx-expand" title="expand" onClick={() => onClick(plant.id)}></i>
             <i class='bx bx-edit-alt'></i>
             <i class='bx bx-trash'></i>
         </div>
