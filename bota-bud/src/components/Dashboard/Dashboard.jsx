@@ -7,7 +7,7 @@ import './Dashboard.css';
 
 function Dashboard({ handleLogout }) {
   const [plants, setPlants] = useState([]);
-  const [selectedPlantId, setSelectedPlantId] = useState(null); // Keep track of the selected plant ID
+  const [selectedPlantId, setSelectedPlantId] = useState(null); 
 
   useEffect(() => {
     fetchPlants();
@@ -20,12 +20,25 @@ function Dashboard({ handleLogout }) {
       .catch((error) => console.error('Error fetching plants:', error));
   }
 
+  const handlePlantDelete = (plantId) => {
+    fetch(`http://localhost:9292/plants/${plantId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === 'Plant deleted successfully.') {
+          setPlants((prevPlants) => prevPlants.filter((plant) => plant.id !== plantId));
+        }
+      })
+      .catch((error) => console.error('Error deleting plant:', error));
+  };
+
   const handlePlantCardClick = (plantId) => {
-    setSelectedPlantId(plantId); // Update the selected plant ID when a PlantCard is clicked
+    setSelectedPlantId(plantId); 
   };
 
   const handleBackToDashboard = () => {
-    setSelectedPlantId(null); // Reset the selected plant ID to hide the PlantDetails
+    setSelectedPlantId(null); 
   };
 
   return (
@@ -55,7 +68,8 @@ function Dashboard({ handleLogout }) {
               key={plant.id}
               plant={plant}
               onClick={handlePlantCardClick}
-              isSelected={plant.id === selectedPlantId} 
+              isSelected={plant.id === selectedPlantId}
+              onDelete={handlePlantDelete}
             />
           ))}
         </div>
