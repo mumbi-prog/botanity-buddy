@@ -7,6 +7,9 @@ import Login from '../Login/Login'
 function LandingPage() {
     const [showLoginForm, setShowLoginForm] = useState(false);
 
+    const handleLoginButtonClick = () => {
+        setShowLoginForm(true);
+    }
     return (
         <div>
         <nav className='navbar' id='navbar'>
@@ -14,7 +17,7 @@ function LandingPage() {
                 <img src={logoImage} alt="Botanical Buddy" className="logo-image" />
                 <span className="logo-text">Botanical Buddy</span>
             </div>
-            <button className='login-button'>Login</button>
+            <button className='login-button' onClick={handleLoginButtonClick}>Login</button>
         </nav>
         <div className='home-content'>
             <div className="page-text">
