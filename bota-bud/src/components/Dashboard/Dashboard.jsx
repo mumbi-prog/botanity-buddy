@@ -21,9 +21,8 @@ function Dashboard({ handleLogout }) {
   }
 
   const handlePlantCardClick = (plantId) => {
-    const selectedPlant = plants.find((plant) => plant.id === plantId);
-    setSelectedPlant(selectedPlant);
-  };
+    setSelectedPlant(plantId);
+};
 
   const handleBackToDashboard = () => {
     setSelectedPlant(null);
@@ -46,12 +45,19 @@ function Dashboard({ handleLogout }) {
             <h2>Plant Collection</h2>
             <div className="plant-card-container">
             {plants.map((plant) => (
-                <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} />
+                <PlantCard key={plant.id} plant={plant} onClick={handlePlantCardClick} isSelected={plant.id === selectedPlant}/>
             ))}
             </div>
-            {selectedPlant ? (
-            <PlantDetails plant={selectedPlant} onBackToDashboard={handleBackToDashboard} />
-            ) : null}
+            <div className={`deets-modal' ${selectedPlant ? '' : 'hidden'}`}>
+                <div className="plant-deets">
+                    {selectedPlant && (
+                        <PlantDetails
+                        plant={plants.find((plant) => plant.id === selectedPlant)}
+                        onBackToDashboard={handleBackToDashboard}
+                        />
+                    )}
+                </div>
+            </div>
         </div>
     </Router>
   );

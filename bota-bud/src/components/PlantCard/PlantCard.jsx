@@ -7,6 +7,7 @@ function PlantCard({ plant, onClick }) {
       <img src={plant.image_url} alt={plant.name} />
       <div className="plant-info">
         <div className='e-and-d'>
+            <i class='bx bx-expand' title='expand'></i>
             <i class='bx bx-edit-alt'></i>
             <i class='bx bx-trash'></i>
         </div>
