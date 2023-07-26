@@ -7,7 +7,7 @@
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 330px;
     height: 150px;
     cursor: pointer;
     transition: transform 0.3s;
@@ -22,13 +22,14 @@
 }
   
 .plant-card img {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 147px;
     border-radius: 8px;
 }
 
 .plant-info {
-    margin-top: 10px;
+    padding-top: 100px;
+    text-align: center;
 }
   
 .plant-info h3 {
