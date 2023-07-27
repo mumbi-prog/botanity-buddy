@@ -75,7 +75,46 @@
     width: fit-content;
 }
 
+.plant-details .plant-info .add-task-button {
+    margin-top: 10px;
+    background-color: #012201;
+    color: #ffffff;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
+.plant-details .plant-info .add-task-form {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+}
 
+h4 {
+    color: #012201;
+    font-size: 30px;
+}
+  
+.plant-details .plant-info .add-task-form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+  
+.plant-details .plant-info .add-task-form button {
+    margin-right: 10px;
+    background-color: #012201;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
 
 
   
