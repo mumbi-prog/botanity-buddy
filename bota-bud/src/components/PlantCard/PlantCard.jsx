@@ -1,7 +1,7 @@
 import React from 'react';
 import './PlantCard.css';
 
-function PlantCard({ plant, onClick, isSelected, onDelete}) {
+function PlantCard({ plant, onClick, isSelected, onDelete, onEdit}) {
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
@@ -17,7 +17,7 @@ function PlantCard({ plant, onClick, isSelected, onDelete}) {
       <div className="plant-info">
         <div className='e-and-d'>
             <i className="bx bx-expand" title="expand" onClick={() => onClick(plant.id)}></i>
-            <i class='bx bx-edit-alt'></i>
+            <i class='bx bx-edit-alt' onClick={onEdit}></i>
             <i class='bx bx-trash' onClick={handleDeleteClick}></i>
         </div>
         <div className="info-holder">
