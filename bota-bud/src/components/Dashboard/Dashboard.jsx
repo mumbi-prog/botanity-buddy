@@ -53,11 +53,10 @@ function Dashboard({ handleLogout }) {
     })
       .then((response) => response.json())
       .then((updatedPlant) => {
-        // Update the frontend state directly without fetching all plants again
         setPlants((prevPlants) =>
           prevPlants.map((plant) => (plant.id === updatedPlant.id ? updatedPlant : plant))
         );
-        setSelectedPlantId(updatedPlant.id); // Update the selected plant with the edited values
+        setSelectedPlantId(updatedPlant.id); 
         setShowEditForm(false);
       })
       .catch((error) => console.error('Error updating plant:', error));
