@@ -8,6 +8,13 @@ import './Dashboard.css';
 function Dashboard({ handleLogout }) {
   const [plants, setPlants] = useState([]);
   const [selectedPlantId, setSelectedPlantId] = useState(null); 
+  const [showEditForm, setShowEditForm] = useState(false);
+  const [editFormValues, setEditFormValues] = useState({
+    id: '',
+    name: '',
+    species: '',
+    image_url: '',
+  });
 
   useEffect(() => {
     fetchPlants();
@@ -33,12 +40,46 @@ function Dashboard({ handleLogout }) {
       .catch((error) => console.error('Error deleting plant:', error));
   };
 
+  const handleUpdatePlant = () => {
+    fetch(`http://localhost:9292/plants/${editFormValues.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: editFormValues.name,
+        species: editFormValues.species,
+        image_url: editFormValues.image_url,
+      }),
+    })
+      .then((response) => response.json())
+      .then((updatedPlant) => {
+        setPlants((prevPlants) =>
+          prevPlants.map((plant) => (plant.id === updatedPlant.id ? updatedPlant : plant))
+        );
+        setShowEditForm(false);
+      })
+      .catch((error) => console.error('Error updating plant:', error));
+  };
+
+  const handleEditPlant = (plant) => {
+    setEditFormValues({
+      id: plant.id,
+      name: plant.name,
+      species: plant.species,
+      image_url: plant.image_url,
+    });
+    setShowEditForm(true);
+  };
+
   const handlePlantCardClick = (plantId) => {
-    setSelectedPlantId(plantId); 
+    setSelectedPlantId(plantId);
+    setShowEditForm(false);
   };
 
   const handleBackToDashboard = () => {
-    setSelectedPlantId(null); 
+    setSelectedPlantId(null);
+    setShowEditForm(false); 
   };
 
   return (
