@@ -97,12 +97,62 @@ function Dashboard({ handleLogout }) {
       </div>
       <div className="plant-dashboard">
         <h2>Plant Collection</h2>
-        {selectedPlantId && (
+
+        {showEditForm ? (
+          <div className="edit-form">
+            <h3>Edit Plant</h3>
+            <form>
+              <div className="form-group">
+                <label>Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={editFormValues.name}
+                  onChange={(e) =>
+                    setEditFormValues({ ...editFormValues, name: e.target.value })
+                  }
+                />
+              </div>
+              <div className="form-group">
+                <label>Species:</label>
+                <input
+                  type="text"
+                  name="species"
+                  value={editFormValues.species}
+                  onChange={(e) =>
+                    setEditFormValues({ ...editFormValues, species: e.target.value })
+                  }
+                />
+              </div>
+              <div className="form-group">
+                <label>Image URL:</label>
+                <input
+                  type="text"
+                  name="image_url"
+                  value={editFormValues.image_url}
+                  onChange={(e) =>
+                    setEditFormValues({ ...editFormValues, image_url: e.target.value })
+                  }
+                />
+              </div>
+              <button type="button" onClick={handleUpdatePlant}>
+                Save Changes
+              </button>
+              <button type="button" onClick={() => setShowEditForm(false)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        ) : null}
+
+        {selectedPlantId ? (
           <PlantDetails
             plant={plants.find((plant) => plant.id === selectedPlantId)}
             onBackToDashboard={handleBackToDashboard}
+            onEdit={() => handleEditPlant(plants.find((plant) => plant.id === selectedPlantId))}
           />
-        )}
+        ) : null}
+        
         <div className="plant-card-container">
           {plants.map((plant) => (
             <PlantCard
@@ -111,6 +161,7 @@ function Dashboard({ handleLogout }) {
               onClick={handlePlantCardClick}
               isSelected={plant.id === selectedPlantId}
               onDelete={handlePlantDelete}
+              onEdit={() => handleEditPlant(plant)}
             />
           ))}
         </div>
