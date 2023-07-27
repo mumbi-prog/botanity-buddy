@@ -17,7 +17,7 @@ function PlantCard({ plant, onClick, isSelected, onDelete, onEdit}) {
       <div className="plant-info">
         <div className='e-and-d'>
             <i className="bx bx-expand" title="expand" onClick={() => onClick(plant.id)}></i>
-            <i class='bx bx-edit-alt' onClick={onEdit}></i>
+            <i class='bx bx-edit-alt' onClick={() => onEdit(plant)}></i>
             <i class='bx bx-trash' onClick={handleDeleteClick}></i>
         </div>
         <div className="info-holder">

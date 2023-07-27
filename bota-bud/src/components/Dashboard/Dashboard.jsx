@@ -54,9 +54,11 @@ function Dashboard({ handleLogout }) {
     })
       .then((response) => response.json())
       .then((updatedPlant) => {
+        // Update the frontend state directly without fetching all plants again
         setPlants((prevPlants) =>
           prevPlants.map((plant) => (plant.id === updatedPlant.id ? updatedPlant : plant))
         );
+        setSelectedPlantId(updatedPlant.id); // Update the selected plant with the edited values
         setShowEditForm(false);
       })
       .catch((error) => console.error('Error updating plant:', error));
@@ -156,12 +158,12 @@ function Dashboard({ handleLogout }) {
         <div className="plant-card-container">
           {plants.map((plant) => (
             <PlantCard
-              key={plant.id}
-              plant={plant}
-              onClick={handlePlantCardClick}
-              isSelected={plant.id === selectedPlantId}
-              onDelete={handlePlantDelete}
-              onEdit={() => handleEditPlant(plant)}
+                key={plant.id}
+                plant={plant}
+                onClick={handlePlantCardClick}
+                isSelected={plant.id === selectedPlantId}
+                onDelete={handlePlantDelete}
+                onEdit={handleEditPlant}
             />
           ))}
         </div>
