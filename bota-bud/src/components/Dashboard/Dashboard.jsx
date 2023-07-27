@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
 import { BrowserRouter as Router } from 'react-router-dom';
-import logoImage from '../../images/logo02.png';
 import './Dashboard.css';
 
 function Dashboard({ handleLogout }) {
@@ -87,9 +86,6 @@ function Dashboard({ handleLogout }) {
   return (
     <Router>
       <div className="navbar">
-        <div className="navbar-left">
-          <img src={logoImage} alt="Botanical Buddy" className="logo-image" />
-        </div>
         <div className="navbar-right">
           <button className="logout-button" onClick={handleLogout}>
             <i className="bx bxs-user-circle"></i>
