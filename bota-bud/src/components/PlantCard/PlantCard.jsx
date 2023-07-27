@@ -1,7 +1,7 @@
 import React from 'react';
 import './PlantCard.css';
 
-function PlantCard({ plant, onClick, isSelected, onDelete }) {
+function PlantCard({ plant, onClick, isSelected, onDelete}) {
 
   const handleDeleteClick = (e) => {
     e.stopPropagation();
