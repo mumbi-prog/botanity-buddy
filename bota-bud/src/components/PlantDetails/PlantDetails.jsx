@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PlantDetails.css';
 
-  function PlantDetails({ plant }) {
+  function PlantDetails({ plant, onCancel }) {
       const [careTasks, setCareTasks] = useState(plant.care_tasks);
       const [showAddTaskForm, setShowAddTaskForm] = useState(false);
       const [editedTask, setEditedTask] = useState(null);
@@ -104,6 +104,9 @@ import './PlantDetails.css';
 
       return (
         <div className="plant-details">
+          <button className="cancel-button" onClick={onCancel}>
+            <i className="bx bx-x"></i>
+          </button>
           <div className="plant-image">
             <img src={plant.image_url} alt={plant.name} />
           </div>

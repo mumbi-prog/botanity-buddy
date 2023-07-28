@@ -114,10 +114,10 @@ function Dashboard({ handleLogout }) {
     setShowEditForm(false);
   };
 
-//   const handleBackToDashboard = () => {
-//     setSelectedPlantId(null);
-//     setShowEditForm(false); 
-//   };
+  //handlecancelplantdetails
+  const handleCancelDetails = () => {
+    setSelectedPlantId(null);
+  };
 
   return (
     <Router>
@@ -232,11 +232,11 @@ function Dashboard({ handleLogout }) {
         ) : null}
 
         {selectedPlantId ? (
-          <PlantDetails
+        <PlantDetails
             plant={plants.find((plant) => plant.id === selectedPlantId)}
-            // onBackToDashboard={handleBackToDashboard}
+            onCancel={handleCancelDetails} // Pass the onCancel function here
             onEdit={() => handleEditPlant(plants.find((plant) => plant.id === selectedPlantId))}
-          />
+        />
         ) : null}
         
         <div className="plant-card-container">

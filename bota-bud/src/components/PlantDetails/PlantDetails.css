@@ -6,6 +6,13 @@
     margin-left: 20%;
     margin-bottom: 30px;
 }
+
+.cancel-button{
+    background-color: #2b5a0a;
+    color: #ffffff;
+    font-weight: bolder;
+    align-self: self-start;
+}
   
 .plant-details .plant-image {
     flex: 1;
