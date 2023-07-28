@@ -14,6 +14,13 @@ function Dashboard({ handleLogout }) {
     species: '',
     image_url: '',
   });
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [newPlant, setNewPlant] = useState({
+    name: '',
+    species: '',
+    image_url: '',
+  });
+
 
   useEffect(() => {
     fetchPlants();
@@ -26,19 +33,35 @@ function Dashboard({ handleLogout }) {
       .catch((error) => console.error('Error fetching plants:', error));
   }
 
-  const handlePlantDelete = (plantId) => {
-    fetch(`http://localhost:9292/plants/${plantId}`, {
-      method: 'DELETE',
+    // add plant
+  const handleAddPlant = () => {
+    fetch('http://localhost:9292/plants', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: newPlant.name,
+        species: newPlant.species,
+        image_url: newPlant.image_url,
+      }),
     })
       .then((response) => response.json())
-      .then((data) => {
-        if (data.message === 'Plant deleted successfully.') {
-          setPlants((prevPlants) => prevPlants.filter((plant) => plant.id !== plantId));
-        }
+      .then((createdPlant) => {
+        setPlants((prevPlants) => [createdPlant, ...prevPlants]);
+        setNewPlant({
+          name: '',
+          species: '',
+          image_url: '',
+        });
+        setShowAddForm(false);
       })
-      .catch((error) => console.error('Error deleting plant:', error));
+      .catch((error) => {
+        console.error('Error adding new plant:', error);
+      });
   };
-
+  
+    // edit plant
   const handleUpdatePlant = () => {
     fetch(`http://localhost:9292/plants/${editFormValues.id}`, {
       method: 'PATCH',
@@ -72,15 +95,29 @@ function Dashboard({ handleLogout }) {
     setShowEditForm(true);
   };
 
+    // delete plant
+  const handlePlantDelete = (plantId) => {
+    fetch(`http://localhost:9292/plants/${plantId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === 'Plant deleted successfully.') {
+          setPlants((prevPlants) => prevPlants.filter((plant) => plant.id !== plantId));
+        }
+      })
+      .catch((error) => console.error('Error deleting plant:', error));
+  };
+
   const handlePlantCardClick = (plantId) => {
     setSelectedPlantId(plantId);
     setShowEditForm(false);
   };
 
-  const handleBackToDashboard = () => {
-    setSelectedPlantId(null);
-    setShowEditForm(false); 
-  };
+//   const handleBackToDashboard = () => {
+//     setSelectedPlantId(null);
+//     setShowEditForm(false); 
+//   };
 
   return (
     <Router>
@@ -94,10 +131,62 @@ function Dashboard({ handleLogout }) {
       </div>
       <div className="plant-dashboard">
         <h2>Plant Collection</h2>
+        <button className="add-plant-button" onClick={() => setShowAddForm(true)}>
+          Add Plant
+        </button>
 
+        {/*add new plant form*/}
+        {showAddForm && (
+          <div className="add-form">
+            <h3 className='form-title'>Add New Plant</h3>
+            <form>
+              <div className="form-group">
+                <label>Name:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={newPlant.name}
+                  onChange={(e) =>
+                    setNewPlant({ ...newPlant, name: e.target.value })
+                  }
+                />
+                </div>
+                <div className="form-group">
+                    <label>Species:</label>
+                    <input
+                    type="text"
+                    name="species"
+                    value={newPlant.species}
+                    onChange={(e) =>
+                        setNewPlant({ ...newPlant, species: e.target.value })
+                    }
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Image URL:</label>
+                    <input
+                    type="text"
+                    name="image_url"
+                    value={newPlant.image_url}
+                    onChange={(e) =>
+                        setNewPlant({ ...newPlant, image_url: e.target.value })
+                    }
+                    />
+                </div>
+              <button type="button" onClick={handleAddPlant}>
+                Save Plant
+              </button>
+              <button type="button" onClick={() => setShowAddForm(false)}>
+                Cancel
+              </button>
+            </form>
+          </div>
+        )}
+
+         {/*edit plant form*/}
         {showEditForm ? (
           <div className="edit-form">
-            <h3>Edit Plant</h3>
+            <h3 className='form-title'>Edit Plant</h3>
             <form>
               <div className="form-group">
                 <label>Name:</label>
@@ -145,7 +234,7 @@ function Dashboard({ handleLogout }) {
         {selectedPlantId ? (
           <PlantDetails
             plant={plants.find((plant) => plant.id === selectedPlantId)}
-            onBackToDashboard={handleBackToDashboard}
+            // onBackToDashboard={handleBackToDashboard}
             onEdit={() => handleEditPlant(plants.find((plant) => plant.id === selectedPlantId))}
           />
         ) : null}
