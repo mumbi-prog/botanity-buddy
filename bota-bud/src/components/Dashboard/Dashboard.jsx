@@ -60,7 +60,7 @@ function Dashboard({ handleLogout }) {
         console.error('Error adding new plant:', error);
       });
   };
-  
+
     // edit plant
   const handleUpdatePlant = () => {
     fetch(`http://localhost:9292/plants/${editFormValues.id}`, {
@@ -121,12 +121,12 @@ function Dashboard({ handleLogout }) {
 
   return (
     <Router>
-      <div className="navbar">
+     <div className="navbar">
         <div className="navbar-right">
-          <button className="logout-button" onClick={handleLogout}>
+        <button className="logout-button" onClick={handleLogout}>
             <i className="bx bxs-user-circle"></i>
             Logout
-          </button>
+        </button>
         </div>
       </div>
       <div className="plant-dashboard">
@@ -137,7 +137,7 @@ function Dashboard({ handleLogout }) {
 
         {/*add new plant form*/}
         {showAddForm && (
-          <div className="add-form">
+          <div className="plant-form">
             <h3 className='form-title'>Add New Plant</h3>
             <form>
               <div className="form-group">
@@ -185,7 +185,7 @@ function Dashboard({ handleLogout }) {
 
          {/*edit plant form*/}
         {showEditForm ? (
-          <div className="edit-form">
+          <div className="plant-form">
             <h3 className='form-title'>Edit Plant</h3>
             <form>
               <div className="form-group">

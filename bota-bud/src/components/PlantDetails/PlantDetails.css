@@ -23,13 +23,14 @@
 }
   
 .plant-details .plant-info h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
 }
   
 .plant-details .plant-info p {
     color: #555;
     margin: 5px 0;
+    font-size: 15px;
 }
   
 .plant-details .plant-info h3 {
@@ -76,43 +77,46 @@
 }
 
 .plant-details .plant-info .add-task-button {
-    margin-top: 10px;
-    background-color: #012201;
-    color: #ffffff;
-    border-radius: 20px;
     width: fit-content;
-    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #2b5a0a;
+    border: spx solid #2b5a0a;
     cursor: pointer;
 }
-  
-.plant-details .plant-info .add-task-form {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f7f7f7;
-}
+
 
 h4 {
     color: #012201;
     font-size: 30px;
 }
-  
-.plant-details .plant-info .add-task-form input {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 9px;
+
+.task-form{
+    border: 1px solid rgb(29, 22, 22);
+    width: fit-content;
+    margin-left: 20% ;
+    padding: 20px;
 }
-  
-.plant-details .plant-info .add-task-form button {
-    margin-right: 10px;
-    background-color: #012201;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
+
+.task-form h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.form-group{
+    padding: 5px;
+}
+
+.task-form input{
+    width: 200px;
+}
+
+.task-form button{
+    color: #f3f3ed;
+    background-color: #2b5a0a;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 25px;
 }
   
 

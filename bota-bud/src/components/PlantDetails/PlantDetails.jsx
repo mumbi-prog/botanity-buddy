@@ -152,7 +152,7 @@ import './PlantDetails.css';
           </div>
 
           {showAddTaskForm && (
-            <div className="add-task-form">
+            <div className="task-form">
               <h3>Add New Care Task</h3>
               <form>
                 <div className="form-group">
@@ -193,7 +193,7 @@ import './PlantDetails.css';
           )}
 
           {editedTask && (
-            <div className="edit-task-form">
+            <div className="task-form">
               <h3>Edit Care Task</h3>
               <form>
                 <div className="form-group">

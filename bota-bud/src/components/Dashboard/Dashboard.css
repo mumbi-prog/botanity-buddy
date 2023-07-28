@@ -1,34 +1,31 @@
-.navbar{
+.logout-button{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 0;
-}
- 
-.navbar-right {
-    margin-right: 10px;
-}
-
-.bx.bxs-user-circle {
-    font-size: 30px;
-    margin-right: 8px;
-  }
-
-.logout-button {
-    display: flex;
-    align-items: center;
     background-color: transparent;
     border: 2px solid #757575;
     cursor: pointer;
     font-size: 16px;
     border-radius: 20px;
-    width: 120px;
+    width: 125px;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 20px;
-    justify-content: space-between;
+    padding: 0 15px;
     height: 40px;
+    margin-top: 20px;
+    margin-left: 1100px;
+}
+
+.add-plant-button{
+    width: fit-content;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #2b5a0a;
+    border: spx solid #2b5a0a;
+    margin-left: 75px;
+    cursor: pointer;
+}
+
+.bx.bxs-user-circle {
+    font-size: 30px;
+    margin-right: 8px;
 }
 
 .logout-button:hover{
@@ -48,4 +45,32 @@ h2{
     text-decoration: underline;
     text-decoration-color: green;
     font-family: 'Gabriela', serif;
+}
+
+.plant-form{
+    border: 1px solid rgb(29, 22, 22);
+    width: fit-content;
+    margin-left: 20% ;
+    padding: 20px;
+}
+
+.plant-form h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.form-group{
+    padding: 5px;
+}
+
+.plant-form input{
+    width: 200px;
+}
+
+.plant-form button{
+    color: #f3f3ed;
+    background-color: #2b5a0a;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 25px;
 }
