@@ -1,25 +1,40 @@
-# Getting Started with Create React App
+# Botanical Buddy - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Botanical Buddy is a web application designed to help plant enthusiasts manage and care for their plants effectively. This frontend repository contains the codebase for the user interface and interaction with the Botanical Buddy web application.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. User Authentication: Allows users to register, login, and access personalized plant care features.
+2. Dashboard: Provides a user-friendly dashboard to view and manage the plant collection.
+3. Plant Details: Displays detailed information about each plant, including care tasks and additional details.
+4. Care Tasks: Customizable care tasks for each plant, with the ability to add, edit, and mark tasks as completed.
+5. Add New Plant and care tasks: Allows users to add new plants/care tasks to their collection with essential information.
+6. Edit Plant Details: Enables users to update plant details.
+7. Delete Plant and care tasks: Provides users with the option to remove plants/care tasks from their collection.
 
-### `npm start`
+### Technologies Used
 
-Runs the app in the development mode.\
+React
+HTML
+CSS
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Setup and Installation
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+#### 1. Clone the repository to your local machine
+```console
+$ git clone git@github.com:mumbi-prog/botanity-buddy.git
+cd botanity-buddy-
+```
+#### 2. Install the dependencies
+```console
+$ npm install
+```
+#### 3. Run the application
+```console
+$ npm start
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,42 +44,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### 4. Access the application at (http://localhost:3000)[http://localhost:3000] in your web browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### License
+This project is licensed under the (MIT License)[https://github.com/mumbi-prog/botanity-buddy/blob/main/LICENSE].
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
