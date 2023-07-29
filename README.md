@@ -1,4 +1,7 @@
 # Botanical Buddy - Frontend
+## Author: Sylvia Mumbi Mwangi
+### Botanity Buddy Back-end API
+**Botanical buddy backend API is available [here](https://github.com/mumbi-prog/phase-3-sinatra-react-project)** - Run the backend then start your application
 
 Botanical Buddy is a web application designed to help plant enthusiasts manage and care for their plants effectively. This frontend repository contains the codebase for the user interface and interaction with the Botanical Buddy web application.
 
@@ -37,4 +40,4 @@ $ npm start
 #### 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### License
-This project is licensed under the MIT License
+This project is licensed under the [MIT License](https://github.com/mumbi-prog/botanity-buddy/blob/main/LICENSE)
