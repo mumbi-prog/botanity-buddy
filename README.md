@@ -7,7 +7,7 @@ Botanical Buddy is a web application designed to help plant enthusiasts manage a
 
 ## Features
 
-1. User Authentication: Allows users to register, login, and access personalized plant care features.
+1. User Authentication: Allows users to log in, and access personalized plant care features.
 2. Dashboard: Provides a user-friendly dashboard to view and manage the plant collection.
 3. Plant Details: Displays detailed information about each plant, including care tasks and additional details.
 4. Care Tasks: Customizable care tasks for each plant, with the ability to add, edit, and mark tasks as completed.
