@@ -14,11 +14,9 @@ Botanical Buddy is a web application designed to help plant enthusiasts manage a
 
 ### Technologies Used
 
-React
-HTML
-CSS
-
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. REACT
+2. HTML
+3. CSS
 
 ### Setup and Installation
 
@@ -36,7 +34,7 @@ $ npm install
 $ npm start
 ```
 
-#### 4. Access the application at (http://localhost:3000)[http://localhost:3000] in your web browser.
+#### 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### License
 This project is licensed under the MIT License
