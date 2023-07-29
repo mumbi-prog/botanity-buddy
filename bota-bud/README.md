@@ -36,16 +36,8 @@ $ npm install
 $ npm start
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 #### 4. Access the application at (http://localhost:3000)[http://localhost:3000] in your web browser.
 
 ### License
-This project is licensed under the (MIT License)[https://github.com/mumbi-prog/botanity-buddy/blob/main/LICENSE].
+This project is licensed under the MIT License
 
