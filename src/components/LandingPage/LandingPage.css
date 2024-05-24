@@ -95,3 +95,39 @@ p{
     font-weight: bolder;
 }
   
+
+/* Editing */
+
+.lp-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../images/lpimg2.jpg");
+
+}
+.content-wrapper {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid #454547;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+
+}
+h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    color: wheat;
+    margin-bottom: 10px;
+}
